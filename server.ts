@@ -11,11 +11,9 @@ app.get('/', (req: Request, res: Response) => {
   res.end();
 });
 
-const port: number = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
-
 app
   .listen(3000, 'localhost', function () {
-    console.info(`Server running on) // : http://localhost:${port}`);
+    console.info(`Server running on) // : http://localhost:3000`);
   })
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   .on('error', (err: any) => {

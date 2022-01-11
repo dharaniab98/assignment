@@ -1,9 +1,15 @@
 import { Sequelize } from 'sequelize';
+import config from './../config/config';
 
-export const sequelize = new Sequelize('keym', 'root', 'dharani@1234', {
-  host: 'localhost',
-  dialect: 'mysql' /* one of 'mysql' | 'mariadb' | 'postgres' | 'mssql' */,
-});
+export const sequelize = new Sequelize(
+  config.db.database,
+  config.db.user,
+  config.db.password,
+  {
+    host: 'localhost',
+    dialect: 'mysql',
+  }
+);
 
 sequelize
   .authenticate()
