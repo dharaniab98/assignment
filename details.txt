@@ -1,0 +1,6 @@
+
+CREATE TABLE IF NOT EXISTS `Companies` (`CompanyId` CHAR(36) BINARY , `companyName` VARCHAR(255) NOT NULL UNIQUE, `companyCeo` VARCHAR(255) NOT NULL, `companyAddress` VARCHAR(255), `inceptionDate` DATETIME, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`CompanyId`)) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS `Teams` (`teamId` CHAR(36) BINARY , `companyId` CHAR(36) BINARY NOT NULL, `teamLeadName` VARCHAR(255), `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`teamId`), FOREIGN KEY (`companyId`) REFERENCES `Companies` (`CompanyId`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;
+
+
