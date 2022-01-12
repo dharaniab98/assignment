@@ -9,6 +9,5 @@ export default class Router {
     });
     app.use('/api/company', companyRouter);
     app.use('/api/team', teamRouter);
-    console.log('Hello Router');
   }
 }
