@@ -1,31 +1,14 @@
-FROM ubuntu:16.04
+FROM node:16.4.0
 
-ENV TZ=Asia/Kolkata
-
-RUN apt-get -y update && \
-    apt-get install -y wget \
-    curl \
-    tzdata \
-    python-software-properties \
-    net-tools \
-    htop \
-    curl \
-    telnet && \
-    curl -sL https://deb.nodesource.com/setup_16.x | bash - && \
-    apt-get install -y nodejs && \
-    echo "Asia/Kolkata" > /etc/timezone && \
-    dpkg-reconfigure -f noninteractive tzdata
-
-WORKDIR /var/www/html
+WORKDIR /usr/src/app
 
 COPY package*.json ./
 
 RUN npm install
+RUN set -ex; \
+    apt-get update; \
+    apt-get install default-mysql-client -y
 
 COPY . .
 
-RUN npm run transpile
-
-EXPOSE 3000
-
-CMD [ "npm", "run", "start"]
+EXPOSE 8080

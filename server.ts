@@ -7,13 +7,12 @@ new Server(app);
 
 app.get('/', (req: Request, res: Response) => {
   console.log('base root');
-  res.send('Hello');
   res.end();
 });
 
 app
-  .listen(3000, 'localhost', function () {
-    console.info(`Server running on) // : http://localhost:3000`);
+  .listen(8080, 'localhost', function () {
+    console.info(`Server running on) // : http://localhost:8080`);
   })
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   .on('error', (err: any) => {

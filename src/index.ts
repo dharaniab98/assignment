@@ -5,7 +5,6 @@ export default class Server {
   constructor(app: Application) {
     this.config(app);
     new Router(app);
-    console.log('Hello');
   }
 
   public config(app: Application) {

@@ -10,7 +10,7 @@ export default class TeamControl {
       const result = await teamRepo.createTeam(teamId, companyId, teamLeadName);
       res.send({ message: 'success', data: result });
     } catch (err) {
-      res.send({ message: 'fail', data: err.errors });
+      res.send({ message: 'fail', data: err.name });
     }
   }
 

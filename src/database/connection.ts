@@ -3,10 +3,10 @@ import config from './../config/config';
 
 export const sequelize = new Sequelize(
   config.db.database,
-  config.db.user,
+  config.db.username,
   config.db.password,
   {
-    host: 'localhost',
+    host: config.db.host,
     dialect: 'mysql',
   }
 );

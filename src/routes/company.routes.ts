@@ -18,7 +18,6 @@ class CompanyRouter {
     this.router
       .route('/search/:searchString')
       .get(jwtToken.validateToken, this.companyControl.searchCompanyByName);
-    console.log('Hello comapnyrouter');
   }
 }
 
