@@ -9,5 +9,6 @@ export default class Router {
     });
     app.use('/api/company', companyRouter);
     app.use('/api/team', teamRouter);
+    app.use('api/teams', teamRouter);
   }
 }
