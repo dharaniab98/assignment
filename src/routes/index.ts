@@ -4,7 +4,7 @@ import teamRouter from './team.routes';
 
 export default class Router {
   constructor(app: Application) {
-    //this is health check
+    // health check done
     app.route('/health').get((req: Request, res: Response) => {
       res.send({ status: 'success', message: 'working fine' });
     });
